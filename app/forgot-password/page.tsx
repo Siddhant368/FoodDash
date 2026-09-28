@@ -3,46 +3,45 @@
 import { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Mail, Lock, Phone, ArrowRight, Loader2, Eye, EyeOff } from "lucide-react";
+import { Mail, Lock, ArrowRight, Loader2, Eye, EyeOff } from "lucide-react";
 
-export default function LoginPage() {
+export default function ForgotPasswordPage() {
   const router = useRouter();
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [newPassword, setNewPassword] = useState("");
   const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleReset = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
+    setSuccess("");
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch("/api/auth/reset-password", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, newPassword }),
       });
 
       const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.message || "Failed to login");
+        throw new Error(data.message || "Failed to reset password");
       }
 
-      const userRole = data.user?.role;
-      if (userRole === "SUPER_ADMIN") {
-        router.push("/super-admin");
-      } else if (userRole === "RESTAURANT_ADMIN" || userRole === "STAFF") {
-        router.push("/admin");
-      } else if (userRole === "DELIVERY_PARTNER") {
-        router.push("/delivery");
-      } else {
-        router.push("/");
-      }
+      setSuccess("Password reset successfully! You can now log in.");
       
-      router.refresh();
+      // Clear form
+      setEmail("");
+      setNewPassword("");
+      
+      setTimeout(() => {
+        router.push("/login");
+      }, 2000);
     } catch (err: any) {
       setError(err.message);
     } finally {
@@ -56,7 +55,7 @@ export default function LoginPage() {
       <div className="hidden lg:flex lg:w-1/2 relative bg-[#111111] overflow-hidden flex-col justify-between p-12">
         <div className="absolute inset-0">
           <img
-            src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=2070&auto=format&fit=crop"
+            src="https://images.unsplash.com/photo-1493770348161-369560ae357d?q=80&w=2070&auto=format&fit=crop"
             alt="Food background"
             className="w-full h-full object-cover opacity-40"
           />
@@ -77,18 +76,18 @@ export default function LoginPage() {
 
         <div className="relative z-10 max-w-lg">
           <h1 className="text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
-            Delicious Food,<br />
-            <span className="text-[#FFE13C]">Delivered to Your Door</span>
+            Reset Your<br />
+            <span className="text-[#FFE13C]">Password</span>
           </h1>
           <p className="text-lg text-gray-300 font-medium leading-relaxed">
-            Explore the best restaurants and enjoy amazing food delivered right to your doorstep.
+            Get back to ordering your favorite food in no time.
           </p>
         </div>
       </div>
 
       {/* Right Column - Auth Form */}
-      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12">
-        <div className="w-full max-w-[440px] bg-white rounded-[24px] p-8 sm:p-10 border border-[#EAEAEA] shadow-sm">
+      <div className="w-full lg:w-1/2 flex items-center justify-center p-6 sm:p-12 overflow-y-auto">
+        <div className="w-full max-w-[440px] bg-white rounded-[24px] p-8 sm:p-10 border border-[#EAEAEA] shadow-sm my-auto">
           
           {/* Mobile Logo */}
           <div className="lg:hidden flex items-center justify-center gap-2 mb-8">
@@ -99,8 +98,8 @@ export default function LoginPage() {
           </div>
 
           <div className="mb-8 text-center lg:text-left">
-            <h2 className="text-3xl font-black text-[#111111] mb-2 tracking-tight">Welcome back</h2>
-            <p className="text-[#111111]/60 font-medium text-sm">Sign in to continue to FoodDash</p>
+            <h2 className="text-3xl font-black text-[#111111] mb-2 tracking-tight">Forgot password?</h2>
+            <p className="text-[#111111]/60 font-medium text-sm">Enter your email and a new password.</p>
           </div>
 
           {error && (
@@ -110,7 +109,14 @@ export default function LoginPage() {
             </div>
           )}
 
-          <form onSubmit={handleLogin} className="space-y-5">
+          {success && (
+            <div className="mb-6 p-4 rounded-xl border border-green-200 bg-green-50 text-green-700 text-sm font-medium flex items-start gap-3">
+              <span className="mt-0.5">✅</span>
+              <p>{success}</p>
+            </div>
+          )}
+
+          <form onSubmit={handleReset} className="space-y-4">
             <div className="space-y-1.5">
               <label className="text-sm font-bold text-[#111111]">Email address</label>
               <div className="relative">
@@ -127,17 +133,15 @@ export default function LoginPage() {
             </div>
 
             <div className="space-y-1.5">
-              <div className="flex items-center justify-between">
-                <label className="text-sm font-bold text-[#111111]">Password</label>
-                <Link href="/forgot-password" className="text-xs font-bold text-[#111111]/60 hover:text-[#111111] transition-colors">Forgot password?</Link>
-              </div>
+              <label className="text-sm font-bold text-[#111111]">New Password</label>
               <div className="relative">
                 <Lock size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400" />
                 <input
                   type={showPassword ? "text" : "password"}
                   required
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  minLength={8}
+                  value={newPassword}
+                  onChange={(e) => setNewPassword(e.target.value)}
                   placeholder="••••••••"
                   className="w-full h-14 bg-white border border-[#E5E5E5] rounded-xl pl-11 pr-12 text-[#111111] text-sm font-medium focus:outline-none focus:border-[#FFE13C] focus:ring-1 focus:ring-[#FFE13C] transition-all placeholder:text-gray-400"
                 />
@@ -150,34 +154,29 @@ export default function LoginPage() {
                 </button>
               </div>
             </div>
-            
-            <div className="flex items-center gap-2 pt-1 pb-2">
-              <input type="checkbox" id="remember" className="w-4 h-4 rounded border-gray-300 text-[#111111] focus:ring-[#FFE13C]" />
-              <label htmlFor="remember" className="text-sm font-medium text-gray-600 cursor-pointer">Remember me</label>
-            </div>
 
             <button
               type="submit"
               disabled={loading}
-              className="w-full h-14 bg-[#FFE13C] hover:bg-[#F0D32C] text-[#111111] rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98]"
+              className="w-full h-14 bg-[#FFE13C] hover:bg-[#F0D32C] text-[#111111] rounded-xl font-bold flex items-center justify-center gap-2 transition-all disabled:opacity-70 disabled:cursor-not-allowed active:scale-[0.98] mt-2"
             >
               {loading ? (
                 <>
                   <Loader2 size={18} className="animate-spin" /> 
-                  Signing in...
+                  Resetting...
                 </>
               ) : (
                 <>
-                  Sign In <ArrowRight size={18} />
+                  Reset Password <ArrowRight size={18} />
                 </>
               )}
             </button>
           </form>
 
           <div className="mt-8 text-center text-sm font-medium text-gray-500">
-            Don't have an account?{" "}
-            <Link href="/signup" className="text-[#111111] font-bold hover:underline">
-              Create account
+            Remember your password?{" "}
+            <Link href="/login" className="text-[#111111] font-bold hover:underline">
+              Sign in
             </Link>
           </div>
         </div>
