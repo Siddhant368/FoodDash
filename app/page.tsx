@@ -80,7 +80,7 @@ async function getDishRecommendations(userId?: string) {
     }
 
     if (recommendedDishes.length === 0) {
-      recommendedDishes = await MenuItem.find({ isFeatured: true, isAvailable: true })
+      recommendedDishes = await MenuItem.find({ isAvailable: true })
         .populate("restaurantId", "name isActive")
         .limit(10)
         .lean();

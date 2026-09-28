@@ -17,7 +17,8 @@ if (!MONGODB_URI) {
 }
 
 async function seed() {
-  try {
+  
+   {
     await mongoose.connect(MONGODB_URI as string, {
       dbName: "restaurant_saas",
     });
@@ -168,110 +169,7 @@ async function seed() {
       (category) => category.slug === "beverages"
     );
 
-    // Menu Items
-    const menuItems = [
-      {
-        restaurantId: restaurant._id,
-        categoryId: pizzaCategory!._id,
-        name: "Margherita Pizza",
-        slug: "margherita-pizza",
-        description:
-          "Classic pizza with tomato, mozzarella and basil.",
-        price: 249,
-        image: "/images/foods/margherita-pizza.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: true,
-        preparationTime: 20,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: pizzaCategory!._id,
-        name: "Farmhouse Pizza",
-        slug: "farmhouse-pizza",
-        description:
-          "Loaded with fresh vegetables and mozzarella.",
-        price: 349,
-        image: "/images/foods/farmhouse-pizza.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: true,
-        preparationTime: 25,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: burgerCategory!._id,
-        name: "Classic Veg Burger",
-        slug: "classic-veg-burger",
-        description:
-          "Crispy veg patty with fresh vegetables and sauce.",
-        price: 179,
-        image: "/images/foods/veg-burger.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: true,
-        preparationTime: 15,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: biryaniCategory!._id,
-        name: "Chicken Biryani",
-        slug: "chicken-biryani",
-        description:
-          "Aromatic basmati rice with flavorful chicken.",
-        price: 299,
-        image: "/images/foods/chicken-biryani.webp",
-        isVeg: false,
-        isAvailable: true,
-        isFeatured: true,
-        preparationTime: 30,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: biryaniCategory!._id,
-        name: "Veg Biryani",
-        slug: "veg-biryani",
-        description:
-          "Fragrant basmati rice with fresh vegetables.",
-        price: 229,
-        image: "/images/foods/veg-biryani.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: false,
-        preparationTime: 25,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: dessertCategory!._id,
-        name: "Chocolate Brownie",
-        slug: "chocolate-brownie",
-        description:
-          "Rich and soft chocolate brownie.",
-        price: 149,
-        image: "/images/foods/chocolate-brownie.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: true,
-        preparationTime: 10,
-      },
-      {
-        restaurantId: restaurant._id,
-        categoryId: beverageCategory!._id,
-        name: "Cold Coffee",
-        slug: "cold-coffee",
-        description: "Creamy chilled coffee.",
-        price: 129,
-        image: "/images/foods/cold-coffee.webp",
-        isVeg: true,
-        isAvailable: true,
-        isFeatured: false,
-        preparationTime: 5,
-      },
-    ];
-
-    await MenuItem.insertMany(menuItems);
-
-    console.log(`${menuItems.length} menu items created`);
+    console.log(`0 menu items created (skipped fake data)`);
 
     console.log("\n================================");
     console.log("DATABASE SEEDED SUCCESSFULLY");
