@@ -118,7 +118,7 @@ export default function AdminAnalyticsPage() {
                     <Tooltip 
                       cursor={{ fill: '#F3F4F6' }}
                       contentStyle={{ borderRadius: '12px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
-                      formatter={(value: number) => [formatCurrency(value), "Revenue"]}
+                      formatter={(value: any) => [formatCurrency(value), "Revenue"]}
                     />
                     <Bar dataKey="revenue" fill="#111111" radius={[4, 4, 0, 0]} />
                   </BarChart>
