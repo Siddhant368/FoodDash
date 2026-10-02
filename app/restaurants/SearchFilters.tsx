@@ -8,7 +8,7 @@ export default function SearchFilters({ currentFilter }: { currentFilter: string
   const searchParams = useSearchParams();
 
   const handleFilter = (filter: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams((searchParams || new URLSearchParams()).toString());
     if (filter === "all") {
       params.delete("filter");
     } else {
@@ -18,7 +18,7 @@ export default function SearchFilters({ currentFilter }: { currentFilter: string
   };
 
   const handleSort = (sort: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams((searchParams || new URLSearchParams()).toString());
     if (sort === "recommended") {
       params.delete("sort");
     } else {
@@ -35,7 +35,7 @@ export default function SearchFilters({ currentFilter }: { currentFilter: string
     { id: "fast", label: "Fast Delivery" },
   ];
 
-  const currentSort = searchParams.get("sort") || "recommended";
+  const currentSort = (searchParams || new URLSearchParams()).get("sort") || "recommended";
 
   return (
     <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between w-full gap-4">

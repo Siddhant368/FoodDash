@@ -74,7 +74,7 @@ export default function AdminSidebar() {
         {menuItems.map((item) => {
           const Icon = item.icon;
           // Exact match for dashboard, prefix match for others to keep them highlighted on subpages
-          const isActive = item.href === '/admin' ? pathname === '/admin' : pathname.startsWith(item.href);
+          const isActive = item.href === '/admin' ? pathname === '/admin' : (pathname || '').startsWith(item.href);
           
           return (
             <Link

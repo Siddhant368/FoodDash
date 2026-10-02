@@ -27,7 +27,7 @@ export default function DeliveryLayout({ children }: { children: React.ReactNode
         </div>
         <nav className="flex-1 p-4 space-y-2">
           {navItems.map(item => {
-            const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/delivery");
+            const isActive = pathname === item.href || ((pathname || '').startsWith(item.href) && item.href !== "/delivery");
             return (
               <Link key={item.href} href={item.href} className={`flex items-center gap-3 p-3 rounded-xl font-bold transition-all ${isActive ? "bg-[#FFE13C] text-[#111111]" : "text-gray-500 hover:bg-gray-50 hover:text-[#111111]"}`}>
                 <item.icon size={20} className={isActive ? "fill-[#111111]" : ""} />
@@ -62,7 +62,7 @@ export default function DeliveryLayout({ children }: { children: React.ReactNode
         <nav className="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 z-30 pb-safe shadow-[0_-5px_15px_-5px_rgba(0,0,0,0.05)]">
           <div className="flex justify-around items-center h-16">
             {navItems.map(item => {
-              const isActive = pathname === item.href || (pathname.startsWith(item.href) && item.href !== "/delivery");
+              const isActive = pathname === item.href || ((pathname || '').startsWith(item.href) && item.href !== "/delivery");
               return (
                 <Link key={item.href} href={item.href} className={`flex flex-col items-center justify-center w-full h-full gap-1 transition-colors ${isActive ? "text-[#111111]" : "text-gray-400 hover:text-gray-600"}`}>
                   <item.icon size={isActive ? 24 : 20} className={isActive ? "fill-[#FFE13C]" : ""} />

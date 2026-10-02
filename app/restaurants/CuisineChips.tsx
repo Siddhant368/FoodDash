@@ -19,7 +19,7 @@ export default function CuisineChips({ currentCuisine }: { currentCuisine: strin
   const searchParams = useSearchParams();
 
   const handleCuisine = (cuisine: string) => {
-    const params = new URLSearchParams(searchParams.toString());
+    const params = new URLSearchParams((searchParams || new URLSearchParams()).toString());
     const val = cuisine.toLowerCase();
     if (val === "all") {
       params.delete("cuisine");

@@ -12,6 +12,10 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { getOrderUpdate } from "./actions";
+import { io as socketIO, Socket } from "socket.io-client";
+import dynamic from "next/dynamic";
+
+const LiveMap = dynamic(() => import("@/components/LiveMap"), { ssr: false });
 
 const STATUS_MAP: Record<string, { label: string; icon: string; title: string; subtitle: string; index: number }> = {
   PENDING: { label: "Order Placed", icon: "📝", title: "Order received", subtitle: "Waiting for restaurant to confirm", index: 0 },
@@ -34,6 +38,9 @@ const TIMELINE_STEPS = [
 
 export default function OrderTrackerClient({ initialData, orderId }: { initialData: any, orderId: string }) {
   const [data, setData] = useState(initialData);
+  const [liveLocation, setLiveLocation] = useState<any>(null);
+  const [trackingStatus, setTrackingStatus] = useState<string>("Connecting to live tracking...");
+  const [etaText, setEtaText] = useState<string>("");
 
   useEffect(() => {
     if (["DELIVERED", "CANCELLED"].includes(data.orderStatus)) return;
@@ -48,6 +55,40 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
     return () => clearInterval(interval);
   }, [data.orderStatus, orderId]);
 
+  useEffect(() => {
+    let socket: Socket | null = null;
+    if (data.orderStatus === "OUT_FOR_DELIVERY") {
+      socket = socketIO({
+        path: "/api/socket/io",
+        addTrailingSlash: false,
+      });
+
+      socket.on("connect", () => {
+        socket?.emit("delivery:join", orderId);
+        if (!liveLocation) setTrackingStatus("Waiting for location updates...");
+      });
+
+      socket.on("delivery:location", (loc) => {
+        setLiveLocation(loc);
+        setTrackingStatus("Live");
+      });
+
+      socket.on("delivery:offline", () => {
+        setTrackingStatus("Delivery partner location is currently unavailable.");
+      });
+      
+      socket.on("disconnect", () => {
+        setTrackingStatus("Live tracking temporarily disconnected.");
+      });
+    }
+
+    return () => {
+      if (socket) {
+        socket.disconnect();
+      }
+    };
+  }, [data.orderStatus, orderId]); // removed liveLocation from dependency array to avoid reconnect loop
+
   const currentStatusInfo = STATUS_MAP[data.orderStatus] || STATUS_MAP.PENDING;
   const currentStepIndex = TIMELINE_STEPS.indexOf(data.orderStatus);
 
@@ -57,9 +98,15 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
     });
   };
 
+  const getUpdatedAt = () => {
+    if (!liveLocation?.updatedAt) return "";
+    const seconds = Math.floor((new Date().getTime() - new Date(liveLocation.updatedAt).getTime()) / 1000);
+    if (seconds < 60) return `${seconds} seconds ago`;
+    return `${Math.floor(seconds / 60)} minutes ago`;
+  };
+
   return (
     <div className="min-h-screen bg-[#FFFDF0] text-[#111111] font-sans pb-24">
-      {/* Top Header */}
       <header className="sticky top-0 z-40 bg-white/90 backdrop-blur-md border-b border-gray-100 px-4 h-16 flex items-center justify-between shadow-sm lg:px-8">
         <div className="flex items-center gap-4">
           <Link href={`/orders/${orderId}`} className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-50 hover:bg-[#FFF9D6] transition-colors border border-gray-100 text-[#111111]">
@@ -72,10 +119,8 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
       <main className="max-w-4xl mx-auto px-4 py-8 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           
-          {/* Left Column - Progress & Map/Status Header */}
           <div className="lg:col-span-2 space-y-8">
             
-            {/* Status Header Card */}
             <div className="bg-white rounded-[32px] p-8 shadow-xl shadow-black/5 border border-gray-100 flex flex-col items-center justify-center text-center py-12 relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-[#FFE13C]/20 rounded-full blur-3xl"></div>
               <div className="absolute bottom-0 left-0 w-32 h-32 bg-[#FFE13C]/20 rounded-full blur-3xl"></div>
@@ -88,7 +133,46 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
               </div>
             </div>
 
-            {/* Timeline Card */}
+            {/* LIVE TRACKING SECTION */}
+            {data.orderStatus === "OUT_FOR_DELIVERY" && (
+              <div className="bg-white rounded-[32px] p-6 shadow-xl shadow-black/5 border border-gray-100">
+                <div className="flex justify-between items-center mb-4">
+                  <div>
+                    <h3 className="font-black text-xl tracking-tight flex items-center gap-2">
+                      <MapPin size={22} className="text-[#FFE13C]" />
+                      Order is on the way
+                    </h3>
+                    {etaText && (
+                      <p className="text-gray-500 font-bold mt-1 text-sm">{etaText} • On time</p>
+                    )}
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className={`text-xs font-bold px-3 py-1 rounded-full ${trackingStatus === 'Live' ? 'bg-green-100 text-green-700' : 'bg-gray-100 text-gray-700'}`}>
+                      {trackingStatus === 'Live' ? '● Live' : trackingStatus}
+                    </span>
+                    {liveLocation && trackingStatus === 'Live' && (
+                      <span className="text-[10px] text-gray-500 mt-1 font-semibold">Last updated: {getUpdatedAt()}</span>
+                    )}
+                  </div>
+                </div>
+                
+                {liveLocation ? (
+                  <LiveMap 
+                    driverLocation={liveLocation} 
+                    customerLocation={data.customerLocation}
+                    restaurantLocation={data.restaurantLocation}
+                    onEtaUpdate={setEtaText}
+                  />
+                ) : (
+                  <div className="h-64 bg-gray-50 border border-gray-100 rounded-[24px] flex flex-col items-center justify-center text-center p-6">
+                     <MapPin size={32} className="text-gray-300 mb-3" />
+                     <p className="text-gray-500 font-semibold text-sm">Live location is not available yet.</p>
+                     <p className="text-gray-400 text-xs mt-1">Waiting for delivery partner to share location...</p>
+                  </div>
+                )}
+              </div>
+            )}
+
             <div className="bg-white rounded-[32px] p-8 shadow-xl shadow-black/5 border border-gray-100">
               <h3 className="font-black text-2xl mb-8 tracking-tight">Order Progress</h3>
               
@@ -142,10 +226,8 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
             
           </div>
 
-          {/* Right Column - Details */}
           <div className="space-y-8">
             
-            {/* Delivery Partner */}
             <div className="bg-white rounded-[32px] p-6 shadow-xl shadow-black/5 border border-gray-100">
               <h3 className="font-black text-xl mb-6 tracking-tight flex items-center gap-2">
                 <User size={22} className="text-[#FFE13C]" />
@@ -172,7 +254,6 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
               )}
             </div>
 
-            {/* Order Details */}
             <div className="bg-white rounded-[32px] p-6 shadow-xl shadow-black/5 border border-gray-100 space-y-5">
               <h3 className="font-black text-xl tracking-tight flex items-center gap-2 mb-2">
                 <Receipt size={22} className="text-[#FFE13C]" />
@@ -208,7 +289,6 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
               </div>
             </div>
 
-            {/* Delivery Address */}
             <div className="bg-white rounded-[32px] p-6 shadow-xl shadow-black/5 border border-gray-100">
               <h3 className="font-black text-xl mb-5 tracking-tight flex items-center gap-2">
                 <MapPin size={22} className="text-[#FFE13C]" />
@@ -228,7 +308,6 @@ export default function OrderTrackerClient({ initialData, orderId }: { initialDa
         </div>
       </main>
 
-      {/* Action Bar (Sticky Bottom on Mobile) */}
       <div className="fixed bottom-0 left-0 right-0 bg-white/90 backdrop-blur-md border-t border-gray-100 p-4 z-40 lg:static lg:bg-transparent lg:border-t-0 lg:p-0 lg:max-w-4xl lg:mx-auto lg:px-8 lg:mt-8">
         <div className="flex flex-wrap items-center gap-4 justify-center lg:justify-start">
           <Link href={`/orders/${orderId}`} className="flex-1 lg:flex-none text-center bg-[#111111] text-[#FFFDF0] px-8 py-4 rounded-[20px] font-black hover:scale-105 transition-transform shadow-lg shadow-black/20">

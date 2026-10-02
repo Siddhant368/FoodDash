@@ -27,7 +27,7 @@ export default async function OrderTrackingPage({ params }: { params: Promise<{ 
     return notFound();
   }
   
-  const restaurant = await Restaurant.findById(order.restaurantId).select("name").lean();
+  const restaurant = await Restaurant.findById(order.restaurantId).select("name address").lean();
   
   const assignment = await DeliveryAssignment.findOne({ orderId: order._id }).lean();
   
@@ -46,12 +46,20 @@ export default async function OrderTrackingPage({ params }: { params: Promise<{ 
     orderId: order._id.toString(),
     orderStatus: order.status,
     restaurantName: restaurant?.name || "Restaurant",
+    restaurantLocation: {
+      latitude: restaurant?.address?.latitude || 28.6139, // Default to Delhi if null
+      longitude: restaurant?.address?.longitude || 77.2090
+    },
     createdAt: order.createdAt.toISOString(),
     itemCount: order.items.reduce((acc: number, item: any) => acc + item.quantity, 0),
     totalAmount: order.totalAmount,
     paymentMethod: order.paymentMethod,
     paymentStatus: order.paymentStatus,
     deliveryAddress: order.deliveryAddress,
+    customerLocation: {
+      latitude: order.deliveryAddress?.latitude || 28.5355,
+      longitude: order.deliveryAddress?.longitude || 77.3910
+    },
     deliveryStatus: assignment?.status || null,
     deliveryPartner,
   };

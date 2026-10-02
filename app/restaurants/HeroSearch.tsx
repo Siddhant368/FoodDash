@@ -7,15 +7,15 @@ export default function HeroSearch({ isCompact = false }: { isCompact?: boolean 
   const router = useRouter();
   const searchParams = useSearchParams();
   
-  const initialQ = searchParams.get("q") || "";
+  const initialQ = (searchParams || new URLSearchParams()).get("q") || "";
   const [searchTerm, setSearchTerm] = useState(initialQ);
 
   useEffect(() => {
-    const currentQ = searchParams.get("q") || "";
+    const currentQ = (searchParams || new URLSearchParams()).get("q") || "";
     if (searchTerm === currentQ) return;
 
     const delayDebounceFn = setTimeout(() => {
-      const params = new URLSearchParams(searchParams.toString());
+      const params = new URLSearchParams((searchParams || new URLSearchParams()).toString());
       if (searchTerm) {
         params.set("q", searchTerm);
       } else {

@@ -14,6 +14,8 @@ export interface IRestaurant extends Document {
     state?: string;
     pincode?: string;
     country?: string;
+    latitude?: number;
+    longitude?: number;
   };
   isOpen: boolean;
   isActive: boolean;
@@ -89,6 +91,12 @@ const RestaurantSchema = new Schema<IRestaurant>(
       country: {
         type: String,
         default: "India",
+      },
+      latitude: {
+        type: Number,
+      },
+      longitude: {
+        type: Number,
       },
     },
 
