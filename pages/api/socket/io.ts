@@ -3,7 +3,7 @@ import { NextApiRequest } from "next";
 import { Server as ServerIO } from "socket.io";
 import { NextApiResponse } from "next";
 import { verifyToken } from "@/lib/auth/jwt";
-import { parse } from "cookie";
+import { parseCookie } from "cookie";
 import { connectDB } from "@/lib/db";
 import DeliveryAssignment from "@/models/DeliveryAssignment";
 import Order from "@/models/Order";
@@ -35,7 +35,7 @@ const ioHandler = (req: NextApiRequest, res: NextApiResponseServerIO) => {
       // Helper to check auth
       const getUserIdFromCookie = async (cookieStr?: string) => {
         if (!cookieStr) return null;
-        const cookiesObj = parse(cookieStr);
+        const cookiesObj = parseCookie(cookieStr);
         const token = cookiesObj["auth_token"];
         if (!token) return null;
         try {
