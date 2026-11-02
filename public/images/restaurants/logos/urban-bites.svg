@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_urban" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#111111"/>
+      <stop offset="100%" stop-color="#1F2937"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_urban)" stroke="#FFE13C" stroke-width="4"/>
+  <path d="M65 75 C65 52 135 52 135 75 Z" fill="#FFE13C"/>
+  <line x1="60" y1="83" x2="140" y2="83" stroke="#22C55E" stroke-width="5" stroke-linecap="round"/>
+  <line x1="63" y1="93" x2="137" y2="93" stroke="#EF4444" stroke-width="6" stroke-linecap="round"/>
+  <path d="M65 102 C65 114 135 114 135 102 Z" fill="#FFE13C"/>
+  <circle cx="88" cy="64" r="2" fill="#111111"/>
+  <circle cx="100" cy="58" r="2" fill="#111111"/>
+  <circle cx="112" cy="64" r="2" fill="#111111"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="15" font-weight="900" fill="#FFE13C" letter-spacing="2">URBAN BITES</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FFFFFF" letter-spacing="3">BURGERS &amp; FUSION</text>
+</svg>

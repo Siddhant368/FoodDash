@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_royal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B132B"/>
+      <stop offset="100%" stop-color="#1C2541"/>
+    </linearGradient>
+    <linearGradient id="gold_royal" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_royal)" stroke="#F59E0B" stroke-width="4"/>
+  <path d="M60 90 L75 55 L100 75 L125 55 L140 90 Z" fill="url(#gold_royal)"/>
+  <circle cx="75" cy="50" r="4" fill="#FFF"/>
+  <circle cx="100" cy="46" r="5" fill="#FFF"/>
+  <circle cx="125" cy="50" r="4" fill="#FFF"/>
+  <path d="M65 115 A35 25 0 0 1 135 115 Z" fill="none" stroke="url(#gold_royal)" stroke-width="4"/>
+  <circle cx="100" cy="88" r="4" fill="url(#gold_royal)"/>
+  <line x1="55" y1="120" x2="145" y2="120" stroke="url(#gold_royal)" stroke-width="4" stroke-linecap="round"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">ROYAL KITCHEN</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">FINE DINING</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_curry" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#3B1408"/>
+    </linearGradient>
+    <linearGradient id="curry_grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#C2410C"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_curry)" stroke="#FB923C" stroke-width="4"/>
+  <path d="M55 85 C55 125 145 125 145 85 Z" fill="url(#curry_grad)" stroke="#FED7AA" stroke-width="3"/>
+  <ellipse cx="100" cy="85" rx="45" ry="10" fill="#EA580C" stroke="#FED7AA" stroke-width="2"/>
+  <path d="M85 85 Q100 90 115 85" stroke="#FFFFFF" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <circle cx="100" cy="83" r="3" fill="#22C55E"/>
+  <path d="M92 50 Q96 60 90 70" stroke="#FDBA74" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M108 48 Q112 58 106 68" stroke="#FDBA74" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">THE CURRY BOWL</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDBA74" letter-spacing="3">RICH GRAVIES</text>
+</svg>

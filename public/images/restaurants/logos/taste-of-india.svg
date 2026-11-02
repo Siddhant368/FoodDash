@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_taste" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F766E"/>
+      <stop offset="100%" stop-color="#134E4A"/>
+    </linearGradient>
+    <linearGradient id="gold_taste" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_taste)" stroke="#F59E0B" stroke-width="4"/>
+  <circle cx="100" cy="85" r="36" fill="none" stroke="url(#gold_taste)" stroke-width="3" stroke-dasharray="8 4"/>
+  <circle cx="100" cy="85" r="26" fill="#115E59" stroke="url(#gold_taste)" stroke-width="2"/>
+  <line x1="88" y1="73" x2="112" y2="97" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+  <line x1="112" y1="73" x2="88" y2="97" stroke="#FFF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="100" cy="85" r="4" fill="url(#gold_taste)"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">TASTE OF INDIA</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">PAN-INDIAN FLAVORS</text>
+</svg>

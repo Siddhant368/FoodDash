@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_punjabi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#92400E"/>
+      <stop offset="100%" stop-color="#78350F"/>
+    </linearGradient>
+    <linearGradient id="gold_punjabi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_punjabi)" stroke="#F59E0B" stroke-width="4"/>
+  <path d="M70 75 C60 115 140 115 130 75 Z" fill="url(#gold_punjabi)"/>
+  <ellipse cx="100" cy="75" rx="30" ry="7" fill="#FEF08A"/>
+  <rect x="65" y="72" width="70" height="5" rx="2.5" fill="#FFF"/>
+  <circle cx="100" cy="73" r="5" fill="#FFF"/>
+  <path d="M50 115 Q45 80 60 60" stroke="#FDE047" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M150 115 Q155 80 140 60" stroke="#FDE047" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">PUNJABI TABLE</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">DESI DHABA TASTE</text>
+</svg>

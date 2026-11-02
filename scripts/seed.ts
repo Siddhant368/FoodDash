@@ -21,6 +21,8 @@ const restaurantsData = [
     name: "FoodHub Royal Kitchen",
     slug: "foodhub-royal-kitchen",
     description: "Experience the royal taste of India.",
+    logo: "/images/restaurants/logos/foodhub-royal-kitchen.svg",
+    coverImage: "/images/restaurants/covers/foodhub-royal-kitchen.jpg",
     phone: "+91 9000000001",
     email: "contact@royal-kitchen.com",
     address: { street: "Palace Road", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -29,6 +31,8 @@ const restaurantsData = [
     name: "Udaipur Spice House",
     slug: "udaipur-spice-house",
     description: "Authentic spices from the city of lakes.",
+    logo: "/images/restaurants/logos/udaipur-spice-house.svg",
+    coverImage: "/images/restaurants/covers/udaipur-spice-house.jpg",
     phone: "+91 9000000002",
     email: "contact@udaipur-spice.com",
     address: { street: "Lake Pichola", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -37,6 +41,8 @@ const restaurantsData = [
     name: "Rajasthan Rasoi",
     slug: "rajasthan-rasoi",
     description: "Traditional Rajasthani thali and more.",
+    logo: "/images/restaurants/logos/rajasthan-rasoi.svg",
+    coverImage: "/images/restaurants/covers/rajasthan-rasoi.jpg",
     phone: "+91 9000000003",
     email: "contact@rajasthan-rasoi.com",
     address: { street: "MI Road", city: "Jaipur", state: "Rajasthan", pincode: "302001", country: "India" }
@@ -45,6 +51,8 @@ const restaurantsData = [
     name: "The Tandoor Story",
     slug: "the-tandoor-story",
     description: "Best tandoori dishes in town.",
+    logo: "/images/restaurants/logos/the-tandoor-story.svg",
+    coverImage: "/images/restaurants/covers/the-tandoor-story.jpg",
     phone: "+91 9000000004",
     email: "contact@tandoor-story.com",
     address: { street: "Vaishali Nagar", city: "Jaipur", state: "Rajasthan", pincode: "302021", country: "India" }
@@ -53,6 +61,8 @@ const restaurantsData = [
     name: "Urban Bites",
     slug: "urban-bites",
     description: "Modern Indian fusion food.",
+    logo: "/images/restaurants/logos/urban-bites.svg",
+    coverImage: "/images/restaurants/covers/urban-bites.jpg",
     phone: "+91 9000000005",
     email: "contact@urban-bites.com",
     address: { street: "C Scheme", city: "Jaipur", state: "Rajasthan", pincode: "302001", country: "India" }
@@ -61,6 +71,8 @@ const restaurantsData = [
     name: "The Punjabi Table",
     slug: "the-punjabi-table",
     description: "Hearty Punjabi meals.",
+    logo: "/images/restaurants/logos/the-punjabi-table.svg",
+    coverImage: "/images/restaurants/covers/the-punjabi-table.jpg",
     phone: "+91 9000000006",
     email: "contact@punjabi-table.com",
     address: { street: "Raja Park", city: "Jaipur", state: "Rajasthan", pincode: "302004", country: "India" }
@@ -69,6 +81,8 @@ const restaurantsData = [
     name: "South Indian Junction",
     slug: "south-indian-junction",
     description: "Authentic South Indian delicacies.",
+    logo: "/images/restaurants/logos/south-indian-junction.svg",
+    coverImage: "/images/restaurants/covers/south-indian-junction.jpg",
     phone: "+91 9000000007",
     email: "contact@south-indian-junction.com",
     address: { street: "Bapu Bazaar", city: "Jaipur", state: "Rajasthan", pincode: "302003", country: "India" }
@@ -77,6 +91,8 @@ const restaurantsData = [
     name: "Desi Zaika",
     slug: "desi-zaika",
     description: "Street food style Indian curries.",
+    logo: "/images/restaurants/logos/desi-zaika.svg",
+    coverImage: "/images/restaurants/covers/desi-zaika.jpg",
     phone: "+91 9000000008",
     email: "contact@desi-zaika.com",
     address: { street: "Fateh Sagar", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -85,6 +101,8 @@ const restaurantsData = [
     name: "The Biryani House",
     slug: "the-biryani-house",
     description: "Aromatic and flavorful biryanis.",
+    logo: "/images/restaurants/logos/the-biryani-house.svg",
+    coverImage: "/images/restaurants/covers/the-biryani-house.jpg",
     phone: "+91 9000000009",
     email: "contact@biryani-house.com",
     address: { street: "Hiran Magri", city: "Udaipur", state: "Rajasthan", pincode: "313002", country: "India" }
@@ -93,6 +111,8 @@ const restaurantsData = [
     name: "Green Leaf Cafe",
     slug: "green-leaf-cafe",
     description: "Pure vegetarian delights.",
+    logo: "/images/restaurants/logos/green-leaf-cafe.svg",
+    coverImage: "/images/restaurants/covers/green-leaf-cafe.jpg",
     phone: "+91 9000000010",
     email: "contact@green-leaf.com",
     address: { street: "Saheli Marg", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -101,6 +121,8 @@ const restaurantsData = [
     name: "Jaipur Food Corner",
     slug: "jaipur-food-corner",
     description: "All your favorite Jaipur street foods.",
+    logo: "/images/restaurants/logos/jaipur-food-corner.svg",
+    coverImage: "/images/restaurants/covers/jaipur-food-corner.jpg",
     phone: "+91 9000000011",
     email: "contact@jaipur-food.com",
     address: { street: "Johari Bazaar", city: "Jaipur", state: "Rajasthan", pincode: "302003", country: "India" }
@@ -109,6 +131,8 @@ const restaurantsData = [
     name: "The Curry Bowl",
     slug: "the-curry-bowl",
     description: "Rich and creamy curries.",
+    logo: "/images/restaurants/logos/the-curry-bowl.svg",
+    coverImage: "/images/restaurants/covers/the-curry-bowl.jpg",
     phone: "+91 9000000012",
     email: "contact@curry-bowl.com",
     address: { street: "Malviya Nagar", city: "Jaipur", state: "Rajasthan", pincode: "302017", country: "India" }
@@ -117,6 +141,8 @@ const restaurantsData = [
     name: "Street Food Station",
     slug: "street-food-station",
     description: "Chaat, samosas, and more.",
+    logo: "/images/restaurants/logos/street-food-station.svg",
+    coverImage: "/images/restaurants/covers/street-food-station.jpg",
     phone: "+91 9000000013",
     email: "contact@street-food.com",
     address: { street: "Chetak Circle", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -125,6 +151,8 @@ const restaurantsData = [
     name: "Taste of India",
     slug: "taste-of-india",
     description: "Pan-Indian cuisine under one roof.",
+    logo: "/images/restaurants/logos/taste-of-india.svg",
+    coverImage: "/images/restaurants/covers/taste-of-india.jpg",
     phone: "+91 9000000014",
     email: "contact@taste-of-india.com",
     address: { street: "Mansarovar", city: "Jaipur", state: "Rajasthan", pincode: "302020", country: "India" }
@@ -133,6 +161,8 @@ const restaurantsData = [
     name: "Lake City Kitchen",
     slug: "lake-city-kitchen",
     description: "Dine with the view of the lakes.",
+    logo: "/images/restaurants/logos/lake-city-kitchen.svg",
+    coverImage: "/images/restaurants/covers/lake-city-kitchen.jpg",
     phone: "+91 9000000015",
     email: "contact@lake-city.com",
     address: { street: "Ambrai Ghat", city: "Udaipur", state: "Rajasthan", pincode: "313001", country: "India" }
@@ -140,35 +170,35 @@ const restaurantsData = [
 ];
 
 const menuDataTemplate = [
-  { cat: "Starters", name: "Paneer Tikka", price: 249, isVeg: true },
-  { cat: "Starters", name: "Hara Bhara Kabab", price: 199, isVeg: true },
-  { cat: "Starters", name: "Chicken Tikka", price: 299, isVeg: false },
-  { cat: "Main Course", name: "Dal Makhani", price: 199, isVeg: true },
-  { cat: "Main Course", name: "Paneer Butter Masala", price: 259, isVeg: true },
-  { cat: "Main Course", name: "Kadhai Paneer", price: 249, isVeg: true },
-  { cat: "Main Course", name: "Butter Chicken", price: 349, isVeg: false },
-  { cat: "Breads", name: "Butter Naan", price: 49, isVeg: true },
-  { cat: "Breads", name: "Garlic Naan", price: 59, isVeg: true },
-  { cat: "Rice", name: "Jeera Rice", price: 129, isVeg: true },
-  { cat: "Biryani", name: "Veg Biryani", price: 229, isVeg: true },
-  { cat: "Biryani", name: "Chicken Biryani", price: 299, isVeg: false },
-  { cat: "Dessert", name: "Gulab Jamun", price: 99, isVeg: true },
-  { cat: "Dessert", name: "Rasmalai", price: 129, isVeg: true }
+  { cat: "Starters", name: "Paneer Tikka", price: 249, isVeg: true, image: "/images/foods/paneer-tikka.jpg" },
+  { cat: "Starters", name: "Hara Bhara Kabab", price: 199, isVeg: true, image: "/images/foods/hara-bhara-kabab.jpg" },
+  { cat: "Starters", name: "Chicken Tikka", price: 299, isVeg: false, image: "/images/foods/chicken-tikka.jpg" },
+  { cat: "Main Course", name: "Dal Makhani", price: 199, isVeg: true, image: "/images/foods/dal-makhani.jpg" },
+  { cat: "Main Course", name: "Paneer Butter Masala", price: 259, isVeg: true, image: "/images/foods/paneer-butter-masala.jpg" },
+  { cat: "Main Course", name: "Kadhai Paneer", price: 249, isVeg: true, image: "/images/foods/kadhai-paneer.jpg" },
+  { cat: "Main Course", name: "Butter Chicken", price: 349, isVeg: false, image: "/images/foods/butter-chicken.jpg" },
+  { cat: "Breads", name: "Butter Naan", price: 49, isVeg: true, image: "/images/foods/butter-naan.jpg" },
+  { cat: "Breads", name: "Garlic Naan", price: 59, isVeg: true, image: "/images/foods/garlic-naan.jpg" },
+  { cat: "Rice", name: "Jeera Rice", price: 129, isVeg: true, image: "/images/foods/jeera-rice.jpg" },
+  { cat: "Biryani", name: "Veg Biryani", price: 229, isVeg: true, image: "/images/foods/veg-biryani.jpg" },
+  { cat: "Biryani", name: "Chicken Biryani", price: 299, isVeg: false, image: "/images/foods/chicken-biryani.jpg" },
+  { cat: "Dessert", name: "Gulab Jamun", price: 99, isVeg: true, image: "/images/foods/gulab-jamun.jpg" },
+  { cat: "Dessert", name: "Rasmalai", price: 129, isVeg: true, image: "/images/foods/rasmalai.jpg" }
 ];
 
 function generateUniqueMenu(index: number, restaurantName: string) {
   const menu = [...menuDataTemplate];
   
   if (index % 3 === 0) {
-    menu.push({ cat: "Special", name: "Laal Maas", price: 399, isVeg: false });
-    menu.push({ cat: "Special", name: "Gatte Ki Sabzi", price: 219, isVeg: true });
-    menu.push({ cat: "Special", name: "Dal Baati Churma", price: 299, isVeg: true });
+    menu.push({ cat: "Special", name: "Laal Maas", price: 399, isVeg: false, image: "/images/foods/laal-maas.jpg" });
+    menu.push({ cat: "Special", name: "Gatte Ki Sabzi", price: 219, isVeg: true, image: "/images/foods/gatte-ki-sabzi.jpg" });
+    menu.push({ cat: "Special", name: "Dal Baati Churma", price: 299, isVeg: true, image: "/images/foods/dal-baati-churma.jpg" });
   } else if (index % 3 === 1) {
-    menu.push({ cat: "South Indian", name: "Masala Dosa", price: 149, isVeg: true });
-    menu.push({ cat: "South Indian", name: "Idli Sambar", price: 119, isVeg: true });
+    menu.push({ cat: "South Indian", name: "Masala Dosa", price: 149, isVeg: true, image: "/images/foods/masala-dosa.jpg" });
+    menu.push({ cat: "South Indian", name: "Idli Sambar", price: 119, isVeg: true, image: "/images/foods/idli-sambar.jpg" });
   } else {
-    menu.push({ cat: "Street Food", name: "Pani Puri", price: 79, isVeg: true });
-    menu.push({ cat: "Street Food", name: "Samosa Chaat", price: 99, isVeg: true });
+    menu.push({ cat: "Street Food", name: "Pani Puri", price: 79, isVeg: true, image: "/images/foods/pani-puri.jpg" });
+    menu.push({ cat: "Street Food", name: "Samosa Chaat", price: 99, isVeg: true, image: "/images/foods/samosa-chaat.jpg" });
   }
   
   return menu.map(item => ({
@@ -240,6 +270,7 @@ async function seed() {
             name: item.name,
             description: `Delicious ${item.name} at ${restData.name}`,
             price: item.price,
+            image: item.image,
             isVeg: item.isVeg,
             isAvailable: true,
             isFeatured: false,

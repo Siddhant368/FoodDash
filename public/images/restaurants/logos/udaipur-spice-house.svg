@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_spice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C2D12"/>
+      <stop offset="100%" stop-color="#451A03"/>
+    </linearGradient>
+    <linearGradient id="grad_spice" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDBA74"/>
+      <stop offset="100%" stop-color="#EA580C"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_spice)" stroke="#F97316" stroke-width="4"/>
+  <path d="M60 90 C60 120 140 120 140 90 Z" fill="url(#grad_spice)"/>
+  <rect x="55" y="85" width="90" height="8" rx="4" fill="#FFEDD5"/>
+  <line x1="125" y1="55" x2="95" y2="95" stroke="#FDE047" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="100" cy="60" r="3" fill="#FDE047"/>
+  <circle cx="75" cy="65" r="2.5" fill="#FDE047"/>
+  <circle cx="130" cy="70" r="2.5" fill="#FDE047"/>
+  <rect x="75" y="116" width="50" height="6" rx="3" fill="#FFEDD5"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">SPICE HOUSE</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDBA74" letter-spacing="3">AUTHENTIC TASTE</text>
+</svg>

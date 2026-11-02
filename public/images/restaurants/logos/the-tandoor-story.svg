@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_tandoor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#18181B"/>
+      <stop offset="100%" stop-color="#09090B"/>
+    </linearGradient>
+    <linearGradient id="fire_tandoor" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#EF4444"/>
+      <stop offset="60%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_tandoor)" stroke="#EA580C" stroke-width="4"/>
+  <path d="M100 45 C115 65 130 80 120 105 C110 115 90 115 80 105 C70 80 85 65 100 45 Z" fill="url(#fire_tandoor)"/>
+  <path d="M100 70 C108 80 115 90 110 102 C104 108 96 108 90 102 C85 90 92 80 100 70 Z" fill="#FDE047"/>
+  <line x1="65" y1="120" x2="135" y2="120" stroke="#E4E4E7" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="80" cy="120" r="5" fill="#EF4444"/>
+  <circle cx="100" cy="120" r="5" fill="#F97316"/>
+  <circle cx="120" cy="120" r="5" fill="#EF4444"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">TANDOOR STORY</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#F97316" letter-spacing="3">LIVE CHARCOAL</text>
+</svg>

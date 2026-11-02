@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_lake" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0C4A6E"/>
+      <stop offset="100%" stop-color="#082F49"/>
+    </linearGradient>
+    <linearGradient id="gold_lake" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_lake)" stroke="#38BDF8" stroke-width="4"/>
+  <path d="M65 92 A35 25 0 0 1 135 92 Z" fill="none" stroke="url(#gold_lake)" stroke-width="3.5"/>
+  <circle cx="100" cy="67" r="4" fill="url(#gold_lake)"/>
+  <line x1="58" y1="95" x2="142" y2="95" stroke="url(#gold_lake)" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M60 108 Q75 103 90 108 T120 108 T140 108" stroke="#7DD3FC" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M68 118 Q83 113 98 118 T128 118" stroke="#38BDF8" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">LAKE CITY</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#7DD3FC" letter-spacing="3">LAKESIDE DINING</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_biryani" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="pot_biryani" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#D97706"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_biryani)" stroke="#F59E0B" stroke-width="4"/>
+  <path d="M65 80 C55 125 145 125 135 80 Z" fill="url(#pot_biryani)"/>
+  <path d="M60 80 C60 70 140 70 140 80 Z" fill="#FEF08A" stroke="#D97706" stroke-width="2"/>
+  <circle cx="100" cy="65" r="4" fill="url(#pot_biryani)"/>
+  <path d="M88 45 Q93 55 86 63" stroke="#FDE047" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <path d="M100 40 Q105 50 98 60" stroke="#FDE047" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+  <path d="M112 45 Q117 55 110 63" stroke="#FDE047" stroke-width="2" fill="none" stroke-linecap="round"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">BIRYANI HOUSE</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">DUM SPECIALS</text>
+</svg>

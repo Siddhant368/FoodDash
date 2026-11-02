@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_station" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C2410C"/>
+      <stop offset="100%" stop-color="#9A3412"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_station)" stroke="#FDE047" stroke-width="4"/>
+  <circle cx="100" cy="85" r="26" fill="#FBBF24" stroke="#D97706" stroke-width="3"/>
+  <ellipse cx="100" cy="78" rx="14" ry="8" fill="#15803D" stroke="#FDE047" stroke-width="1.5"/>
+  <circle cx="96" cy="76" r="2" fill="#EF4444"/>
+  <circle cx="104" cy="78" r="2" fill="#FDE047"/>
+  <circle cx="100" cy="80" r="1.5" fill="#EF4444"/>
+  <circle cx="75" cy="65" r="3.5" fill="#22C55E"/>
+  <circle cx="125" cy="65" r="3.5" fill="#22C55E"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="14" font-weight="900" fill="#FFFFFF" letter-spacing="2">FOOD STATION</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">CHAAT &amp; PURI</text>
+</svg>

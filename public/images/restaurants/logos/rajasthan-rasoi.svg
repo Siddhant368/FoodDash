@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_rasoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#881337"/>
+      <stop offset="100%" stop-color="#4C0519"/>
+    </linearGradient>
+    <linearGradient id="gold_rasoi" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FDE047"/>
+      <stop offset="100%" stop-color="#EAB308"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_rasoi)" stroke="#EAB308" stroke-width="4"/>
+  <circle cx="100" cy="85" r="42" fill="none" stroke="url(#gold_rasoi)" stroke-width="4" stroke-dasharray="6 3"/>
+  <circle cx="100" cy="85" r="34" fill="#4C0519" stroke="url(#gold_rasoi)" stroke-width="2"/>
+  <circle cx="88" cy="72" r="8" fill="url(#gold_rasoi)"/>
+  <circle cx="112" cy="72" r="8" fill="url(#gold_rasoi)"/>
+  <circle cx="84" cy="94" r="8" fill="url(#gold_rasoi)"/>
+  <circle cx="116" cy="94" r="8" fill="url(#gold_rasoi)"/>
+  <circle cx="100" cy="86" r="9" fill="#FFF"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="13" font-weight="900" fill="#FFFFFF" letter-spacing="2">RAJASTHAN RASOI</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FDE047" letter-spacing="3">SHAHI THALI</text>
+</svg>

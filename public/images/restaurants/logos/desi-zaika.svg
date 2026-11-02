@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <defs>
+    <linearGradient id="bg_zaika" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#991B1B"/>
+      <stop offset="100%" stop-color="#7F1D1D"/>
+    </linearGradient>
+    <linearGradient id="flame_zaika" x1="0%" y1="100%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#F97316"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="40" fill="url(#bg_zaika)" stroke="#EF4444" stroke-width="4"/>
+  <path d="M55 85 C60 120 140 120 145 85 Z" fill="#450A0A" stroke="#EF4444" stroke-width="3"/>
+  <circle cx="48" cy="85" r="5" fill="none" stroke="#EF4444" stroke-width="3"/>
+  <circle cx="152" cy="85" r="5" fill="none" stroke="#EF4444" stroke-width="3"/>
+  <path d="M85 80 C85 65 95 60 90 48 C105 60 100 75 100 80" fill="url(#flame_zaika)"/>
+  <path d="M105 82 C105 70 115 65 110 55 C122 66 118 78 118 82" fill="url(#flame_zaika)"/>
+  <text x="100" y="155" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" letter-spacing="2">DESI ZAIKA</text>
+  <text x="100" y="175" text-anchor="middle" font-family="'Segoe UI', system-ui, sans-serif" font-size="9" font-weight="700" fill="#FCA5A5" letter-spacing="3">SPICY FLAVORS</text>
+</svg>
