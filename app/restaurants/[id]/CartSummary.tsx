@@ -121,10 +121,10 @@ export default function CartSummary({ restaurantId }: { restaurantId: string }) 
       </div>
 
       {/* Mobile Cart Button */}
-      <div className="lg:hidden fixed bottom-0 inset-x-0 p-4 bg-zinc-50/95 backdrop-blur-md border-t border-zinc-200 z-50 flex justify-center pb-safe">
-        <Link href="/cart" className="w-full max-w-md bg-[#FFE13C] hover:bg-yellow-400 text-zinc-900 h-14 rounded-2xl font-black text-lg flex items-center justify-between px-6 transition-colors shadow-lg shadow-[#FFE13C]/30">
+      <div className="lg:hidden fixed bottom-[60px] inset-x-0 p-3 bg-zinc-900/95 backdrop-blur-md border-t border-white/10 z-40 flex justify-center shadow-lg">
+        <Link href="/cart" className="w-full max-w-md bg-[#FFE13C] hover:bg-yellow-400 text-zinc-900 h-12 rounded-xl font-black text-base flex items-center justify-between px-5 transition-colors shadow-lg shadow-[#FFE13C]/30">
           <div className="flex items-center gap-2">
-            <span className="bg-black/10 w-8 h-8 rounded-lg flex items-center justify-center text-sm font-bold">
+            <span className="bg-black/10 w-7 h-7 rounded-lg flex items-center justify-center text-xs font-bold">
               {cart.items.reduce((acc: number, item: any) => acc + item.quantity, 0)}
             </span>
             <span>View Cart</span>

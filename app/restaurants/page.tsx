@@ -269,74 +269,118 @@ export default async function RestaurantsPage({ searchParams }: Props) {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#111111] text-white pt-20 pb-8 px-4 lg:px-8 mt-12 rounded-t-[48px]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-16">
-          <div className="col-span-1 lg:col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#FFE13C] text-[#111111]">
-                <span className="text-2xl font-black">F</span>
+      <footer className="bg-[#111111] text-white pt-5 sm:pt-16 lg:pt-20 pb-20 sm:pb-8 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-12 rounded-t-[20px] sm:rounded-t-[48px]">
+        {/* Mobile Minimalist Footer (< sm) */}
+        <div className="sm:hidden space-y-3.5">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE13C] text-[#111111]">
+                <span className="text-sm font-black">F</span>
               </div>
-              <h2 className="text-2xl font-black text-[#FFE13C]">FOODDASH</h2>
+              <h2 className="text-base font-black text-[#FFE13C]">FOODDASH</h2>
             </div>
-            <p className="text-[#8A98AB] font-medium mb-8 max-w-sm leading-relaxed">
-              Find the best food in your city. Fresh, fast, and exactly what you're craving right now.
-            </p>
-            <div className="flex gap-4">
-              <button className="w-10 h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            
+            <div className="flex gap-2">
+              <button aria-label="Social link" className="w-7 h-7 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
               </button>
-              <button className="w-10 h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+              <button aria-label="Social link" className="w-7 h-7 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
               </button>
-              <button className="w-10 h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+              <button aria-label="Social link" className="w-7 h-7 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
               </button>
             </div>
           </div>
 
-          <div>
-            <h3 className="font-black text-lg mb-6">Links</h3>
-            <ul className="space-y-4 font-semibold text-[#8A98AB]">
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Company</a></li>
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Support</a></li>
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Contact</a></li>
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Careers</a></li>
-            </ul>
+          <div className="flex flex-wrap items-center justify-between gap-y-1.5 text-[11px] font-semibold text-gray-400 pt-2 border-t border-gray-800/80">
+            <Link href="/" className="hover:text-[#FFE13C] transition-colors">Home</Link>
+            <Link href="/restaurants" className="hover:text-[#FFE13C] transition-colors">Restaurants</Link>
+            <Link href="/orders" className="hover:text-[#FFE13C] transition-colors">Orders</Link>
+            <Link href="/offers" className="hover:text-[#FFE13C] transition-colors">Offers</Link>
+            <a href="#" className="hover:text-[#FFE13C] transition-colors">Privacy</a>
+            <a href="#" className="hover:text-[#FFE13C] transition-colors">Terms</a>
           </div>
 
-          <div>
-            <h3 className="font-black text-lg mb-6">Legal</h3>
-            <ul className="space-y-4 font-semibold text-[#8A98AB]">
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Privacy Policy</a></li>
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Terms of Service</a></li>
-              <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Refund Policy</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="font-black text-lg mb-6">Download App</h3>
-            <div className="space-y-3">
-              <button className="w-full bg-[#222222] hover:bg-[#333333] border border-gray-800 px-4 py-3 rounded-2xl font-bold transition-colors flex items-center gap-3">
-                <div className="text-left">
-                  <div className="text-[10px] text-[#8A98AB] font-medium uppercase tracking-wider">Download on the</div>
-                  <div className="text-sm">App Store</div>
-                </div>
-              </button>
-              <button className="w-full bg-[#222222] hover:bg-[#333333] border border-gray-800 px-4 py-3 rounded-2xl font-bold transition-colors flex items-center gap-3">
-                <div className="text-left">
-                  <div className="text-[10px] text-[#8A98AB] font-medium uppercase tracking-wider">GET IT ON</div>
-                  <div className="text-sm">Google Play</div>
-                </div>
-              </button>
+          <div className="pt-2 border-t border-gray-800/60 flex items-center justify-between text-[10px] text-gray-500 font-medium">
+            <p>© 2026 FOODDASH</p>
+            <div className="flex gap-3">
+              <span>English (US)</span>
+              <span>India</span>
             </div>
           </div>
         </div>
-        
-        <div className="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-semibold text-sm text-[#8A98AB]">
-          <p>Copyright © 2026 FOODDASH. All rights reserved.</p>
-          <div className="flex gap-6">
-            <button className="hover:text-[#FFE13C] transition-colors">English (US)</button>
-            <button className="hover:text-[#FFE13C] transition-colors">India</button>
+
+        {/* Desktop View (>= sm) */}
+        <div className="hidden sm:block">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-12 mb-6 sm:mb-16">
+            <div className="col-span-2 lg:col-span-2">
+              <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-6">
+                <div className="flex h-9 w-9 sm:h-12 sm:w-12 items-center justify-center rounded-xl sm:rounded-2xl bg-[#FFE13C] text-[#111111]">
+                  <span className="text-lg sm:text-2xl font-black">F</span>
+                </div>
+                <h2 className="text-lg sm:text-2xl font-black text-[#FFE13C]">FOODDASH</h2>
+              </div>
+              <p className="text-[#8A98AB] font-medium mb-3 sm:mb-8 max-w-sm leading-snug sm:leading-relaxed text-xs sm:text-base">
+                Find the best food in your city. Fresh, fast, and exactly what you're craving right now.
+              </p>
+              <div className="flex gap-2.5 sm:gap-4">
+                <button aria-label="Social link" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sm:w-4 sm:h-4"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                </button>
+                <button aria-label="Social link" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sm:w-4 sm:h-4"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+                </button>
+                <button aria-label="Social link" className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#222222] flex items-center justify-center hover:bg-[#FFE13C] hover:text-[#111111] transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="sm:w-4 sm:h-4"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div className="col-span-1">
+              <h3 className="font-black text-sm sm:text-lg mb-2 sm:mb-6">Links</h3>
+              <ul className="space-y-1.5 sm:space-y-4 font-semibold text-[#8A98AB] text-xs sm:text-base">
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Company</a></li>
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Support</a></li>
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Contact</a></li>
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Careers</a></li>
+              </ul>
+            </div>
+
+            <div className="col-span-1">
+              <h3 className="font-black text-sm sm:text-lg mb-2 sm:mb-6">Legal</h3>
+              <ul className="space-y-1.5 sm:space-y-4 font-semibold text-[#8A98AB] text-xs sm:text-base">
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-[#FFE13C] transition-colors">Refund Policy</a></li>
+              </ul>
+            </div>
+
+            <div className="col-span-2 sm:col-span-2 lg:col-span-1">
+              <h3 className="font-black text-sm sm:text-lg mb-2 sm:mb-6">Download App</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-1 gap-2 sm:space-y-3 sm:block">
+                <button className="w-full bg-[#222222] hover:bg-[#333333] border border-gray-800 px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl font-bold transition-colors flex items-center gap-2 sm:gap-3">
+                  <div className="text-left">
+                    <div className="text-[9px] sm:text-[10px] text-[#8A98AB] font-medium uppercase tracking-wider leading-none">Download on the</div>
+                    <div className="text-xs sm:text-sm font-bold">App Store</div>
+                  </div>
+                </button>
+                <button className="w-full bg-[#222222] hover:bg-[#333333] border border-gray-800 px-3 py-2 sm:px-4 sm:py-3 rounded-xl sm:rounded-2xl font-bold transition-colors flex items-center gap-2 sm:gap-3 sm:mt-3">
+                  <div className="text-left">
+                    <div className="text-[9px] sm:text-[10px] text-[#8A98AB] font-medium uppercase tracking-wider leading-none">GET IT ON</div>
+                    <div className="text-xs sm:text-sm font-bold">Google Play</div>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+          
+          <div className="max-w-7xl mx-auto border-t border-gray-800 pt-4 sm:pt-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4 font-semibold text-[11px] sm:text-sm text-[#8A98AB] text-center sm:text-left">
+            <p>Copyright © 2026 FOODDASH. All rights reserved.</p>
+            <div className="flex gap-4 sm:gap-6">
+              <button className="hover:text-[#FFE13C] transition-colors">English (US)</button>
+              <button className="hover:text-[#FFE13C] transition-colors">India</button>
+            </div>
           </div>
         </div>
       </footer>

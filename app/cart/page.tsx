@@ -24,8 +24,10 @@ export default function CartPage() {
       const data = await res.json();
       if (res.ok && data.success && data.cart) {
         setCart({ ...data.cart, summary: data.summary });
+        window.dispatchEvent(new Event("cart-updated"));
       } else {
         setCart(null);
+        window.dispatchEvent(new Event("cart-updated"));
       }
     } catch (err) {
       console.error(err);
@@ -269,7 +271,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FAFAF8] text-[#111111] pb-32 lg:pb-12">
+    <div className="min-h-screen bg-[#FAFAF8] text-[#111111] pb-44 lg:pb-12">
       {renderNavbar()}
 
       {/* Dark Hero Section */}
@@ -527,11 +529,11 @@ export default function CartPage() {
       </main>
 
       {/* Mobile Sticky Checkout Bar */}
-      <div className="lg:hidden fixed bottom-0 inset-x-0 bg-white border-t border-gray-200 z-50 p-4 pb-safe shadow-[0_-10px_20px_-10px_rgba(0,0,0,0.05)]">
+      <div className="lg:hidden fixed bottom-[60px] inset-x-0 bg-white/95 backdrop-blur-md border-t border-gray-200 z-40 p-3 shadow-[0_-4px_16px_rgba(0,0,0,0.06)]">
         <button 
           onClick={handleProceedToCheckout}
           disabled={!cart.restaurant?.isOpen}
-          className="w-full bg-[#FFE13C] text-[#111111] h-14 rounded-xl font-black text-lg flex items-center justify-between px-6 hover:bg-[#FFD600] transition-colors disabled:opacity-50"
+          className="w-full bg-[#FFE13C] text-[#111111] h-12 rounded-xl font-black text-base flex items-center justify-between px-5 hover:bg-[#FFD600] transition-colors disabled:opacity-50"
         >
           <div className="flex flex-col items-start leading-tight">
             <span>₹{cart.summary?.total} Total</span>

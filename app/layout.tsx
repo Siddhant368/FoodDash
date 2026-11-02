@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { LocationProvider } from "@/components/LocationContext";
 import { LocationModal } from "@/components/LocationModal";
+import MobileBottomNav from "@/components/MobileBottomNav";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -25,6 +26,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LocationProvider>
           {children}
           <LocationModal />
+          <MobileBottomNav />
         </LocationProvider>
       </body>
     </html>

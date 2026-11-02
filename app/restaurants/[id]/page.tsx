@@ -249,38 +249,67 @@ export default async function RestaurantDetailPage({ params }: Props) {
       </div>
 
       {/* FOOTER */}
-      <footer className="bg-[#111111] text-white pt-16 pb-8 px-4 lg:px-8 mt-24">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-          <div className="col-span-2">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-[#FFE13C] text-[#111111]">
-                <span className="text-xl font-black">F</span>
+      <footer className="bg-[#111111] text-white pt-5 sm:pt-16 pb-20 sm:pb-8 px-4 sm:px-6 lg:px-8 mt-6 sm:mt-24">
+        {/* Mobile Minimalist Footer (< sm) */}
+        <div className="sm:hidden space-y-3.5">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#FFE13C] text-[#111111]">
+                <span className="text-sm font-black">F</span>
               </div>
-              <h2 className="text-xl font-black text-[#FFE13C]">FoodHub</h2>
+              <h2 className="text-base font-black text-[#FFE13C]">FoodHub</h2>
             </div>
-            <p className="text-gray-400 font-medium mb-6 max-w-sm">
-              Your favorite food, delivered with care. Premium dining experience at your doorstep.
-            </p>
+            <p className="text-[11px] text-gray-500 font-medium">Delivered with care</p>
           </div>
-          <div>
-            <h3 className="font-bold text-lg mb-4">Company</h3>
-            <ul className="space-y-3 font-medium text-gray-400">
-              <li><Link href="#" className="hover:text-[#FFE13C]">About Us</Link></li>
-              <li><Link href="#" className="hover:text-[#FFE13C]">Contact</Link></li>
-              <li><Link href="#" className="hover:text-[#FFE13C]">Careers</Link></li>
-            </ul>
+
+          <div className="flex flex-wrap items-center justify-between gap-y-1.5 text-[11px] font-semibold text-gray-400 pt-2 border-t border-gray-800/80">
+            <Link href="/" className="hover:text-[#FFE13C] transition-colors">Home</Link>
+            <Link href="/restaurants" className="hover:text-[#FFE13C] transition-colors">Restaurants</Link>
+            <Link href="/orders" className="hover:text-[#FFE13C] transition-colors">Orders</Link>
+            <Link href="#" className="hover:text-[#FFE13C] transition-colors">About Us</Link>
+            <Link href="#" className="hover:text-[#FFE13C] transition-colors">Privacy</Link>
           </div>
-          <div>
-            <h3 className="font-bold text-lg mb-4">Legal</h3>
-            <ul className="space-y-3 font-medium text-gray-400">
-              <li><Link href="#" className="hover:text-[#FFE13C]">Terms & Conditions</Link></li>
-              <li><Link href="#" className="hover:text-[#FFE13C]">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-[#FFE13C]">Help & Support</Link></li>
-            </ul>
+
+          <div className="pt-2 border-t border-gray-800/60 flex items-center justify-between text-[10px] text-gray-500 font-medium">
+            <p>© 2026 FoodHub</p>
+            <span>All rights reserved</span>
           </div>
         </div>
-        <div className="max-w-7xl mx-auto border-t border-gray-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-medium text-sm text-gray-500">
-          <p>© 2026 FoodHub. All rights reserved.</p>
+
+        {/* Desktop View (>= sm) */}
+        <div className="hidden sm:block">
+          <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-12">
+            <div className="col-span-2">
+              <div className="flex items-center gap-2.5 sm:gap-3 mb-2 sm:mb-6">
+                <div className="flex h-9 w-9 sm:h-10 sm:w-10 items-center justify-center rounded-xl bg-[#FFE13C] text-[#111111]">
+                  <span className="text-lg sm:text-xl font-black">F</span>
+                </div>
+                <h2 className="text-lg sm:text-xl font-black text-[#FFE13C]">FoodHub</h2>
+              </div>
+              <p className="text-gray-400 font-medium mb-3 sm:mb-6 max-w-sm text-xs sm:text-sm">
+                Your favorite food, delivered with care. Premium dining experience at your doorstep.
+              </p>
+            </div>
+            <div>
+              <h3 className="font-bold text-sm sm:text-lg mb-2 sm:mb-4">Company</h3>
+              <ul className="space-y-1.5 sm:space-y-3 font-medium text-gray-400 text-xs sm:text-sm">
+                <li><Link href="#" className="hover:text-[#FFE13C]">About Us</Link></li>
+                <li><Link href="#" className="hover:text-[#FFE13C]">Contact</Link></li>
+                <li><Link href="#" className="hover:text-[#FFE13C]">Careers</Link></li>
+              </ul>
+            </div>
+            <div>
+              <h3 className="font-bold text-sm sm:text-lg mb-2 sm:mb-4">Legal</h3>
+              <ul className="space-y-1.5 sm:space-y-3 font-medium text-gray-400 text-xs sm:text-sm">
+                <li><Link href="#" className="hover:text-[#FFE13C]">Terms & Conditions</Link></li>
+                <li><Link href="#" className="hover:text-[#FFE13C]">Privacy Policy</Link></li>
+                <li><Link href="#" className="hover:text-[#FFE13C]">Help & Support</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="max-w-7xl mx-auto border-t border-gray-800 pt-4 sm:pt-8 flex flex-col md:flex-row items-center justify-between gap-2 sm:gap-4 font-medium text-xs sm:text-sm text-gray-500">
+            <p>© 2026 FoodHub. All rights reserved.</p>
+          </div>
         </div>
       </footer>
     </div>

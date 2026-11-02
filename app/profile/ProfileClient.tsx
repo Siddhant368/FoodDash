@@ -475,7 +475,7 @@ export default function ProfileClient({ user }: { user: UserType }) {
       </div>
 
       {/* Main Content Layout */}
-      <main className="max-w-7xl mx-auto px-4 lg:px-8 -mt-10 relative z-20">
+      <main className="max-w-7xl mx-auto px-4 lg:px-8 -mt-10 relative z-20 pb-24 lg:pb-12">
         <div className="flex flex-col lg:flex-row gap-8">
           
           {/* Left Sidebar Menu */}
